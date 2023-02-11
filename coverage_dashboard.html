@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <style>
+      /* Style for the tabs */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style for the tab links */
+      .tab a {
+        float: left;
+        display: block;
+        padding: 14px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        color: black;
+      }
+
+      /* Style for the active tab link */
+      .tab a.active {
+        background-color: #ddd;
+      }
+
+      /* Style for the tab content */
+      .tabcontent {
+        display: none;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      /* Style for the table */
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tabs -->
+    <div class="tab">
+      <a href="#" class="tablinks" onclick="openTab(event, 'Coverage')">Coverage</a>
+      <a href="#" class="tablinks" onclick="openTab(event, 'Planner view')">Planner view</a>
+    </div>
+
+    <!-- Coverage Tab -->
+    <div id="Coverage" class="tabcontent">
+      <!-- Burn chart -->
+	      <div style="float:left; width:40%;">
+        <!-- Add your burn chart here -->
+		<iframe src="sunburst.html" width="800" height="500"></iframe>
+      </div>
+
+      <!-- Table -->
+      <div style="float:right; width:60%;">
+        <table>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+          <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+            <td>Row 1, Column 3</td>
+          </tr>
+          <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+            <td>Row 2, Column 3</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Planner view Tab -->
+    <div id="Planner view" class="tabcontent">
+      <!-- Burn chart -->
+      <div style="float:left; width:40%;">
+        <!-- Add your burn chart here -->
+      </div>
+
+      <!-- Table -->
+      <div style="float:right; width:60%;">
+        <table>
+         
