@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      /* Tabs container */
+      .tabs {
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      /* Individual tab */
+      .tabs .tab {
+        flex: 1;
+        background-color: #f2f2f2;
+        color: #444;
+        text-align: center;
+        line-height: 3em;
+        cursor: pointer;
+        border: 1px solid #ccc;
+      }
+
+      /* Active tab */
+      .tabs .tab.active {
+        background-color: #fff;
+        border-bottom: none;
+      }
+
+      /* Tab content */
+      .tab-content {
+        display: none;
+        padding: 1em;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      /* Show the active tab content */
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tabs -->
+    <ul class="tabs">
+      <li class="tab active" data-tab="coverage-tab">Coverage</li>
+      <li class="tab" data-tab="planner-view-tab">Planner view</li>
+    </ul>
+
+    <!-- Tab contents -->
+    <div id="coverage-tab" class="tab-content active">
+      <div id="sunburst-plot"></div>
+    </div>
+    <div id="planner-view-tab" class="tab-content">
+      <div id="europe-map-plot"></div>
+    </div>
+
+    <!-- Plotly JavaScript code to create the plots -->
+    <script>
+      // Sunburst plot
+      var sunburstData = [{
+        type: "sunburst",
+        ...
+      }];
+      Plotly.newPlot("sunburst-plot", sunburstData);
+
+      // Europe map plot
+      var europeMapData = [{
+        type: "choropleth",
+        ...
+      }];
+      Plotly.newPlot("europe-map-plot", europeMapData);
+
+      // Tab switching logic
+      var tabs = document.querySelectorAll(".tabs .tab");
+      tabs.forEach(function(tab) {
+        tab.addEventListener("click", function() {
+          var tabId = this.getAttribute("data-tab");
+          var tabContent = document.querySelector("#" + tabId);
+
+          // Remove active class from all tabs and tab contents
+          tabs.forEach(function(t) { t.classList.remove("active"); });
+          document.querySelectorAll(".tab-content").forEach(function(t) { t.classList.remove("active"); });
+
+          //
