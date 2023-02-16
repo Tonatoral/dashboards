@@ -1,4 +1,3 @@
-# My first repository in GitHub
+# Experimenting with Plotly and Dash
 
-I'm playing around trying to share info seamlesly from my office environment to my home environment
-2nd try with bash
+I'm experimenting with plotly to create a hierarchical representation of data using a sunburst chart. 
